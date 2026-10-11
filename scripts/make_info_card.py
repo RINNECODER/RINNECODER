@@ -31,12 +31,11 @@ def main():
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
         f'font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13">',
         f'<rect width="{W}" height="{H}" rx="12" fill="#0d1117" stroke="#30363d"/>',
-        f'<text x="20" y="20" fill="{ACCENT}" font-size="12">$ <tspan fill="{VAL}">neofetch</tspan></text>',
-        f'<text x="24" y="54" font-size="15"><tspan fill="{ACCENT}" font-weight="bold">rinnecoder</tspan>'
+        f'<text x="24" y="44" font-size="15"><tspan fill="{ACCENT}" font-weight="bold">rinnecoder</tspan>'
         f'<tspan fill="{VAL}">@</tspan><tspan fill="{ACCENT}" font-weight="bold">github</tspan></text>',
-        f'<rect x="24" y="62" width="176" height="1.5" fill="{DIM}"/>',
+        f'<rect x="24" y="52" width="176" height="1.5" fill="{DIM}"/>',
     ]
-    y, step = 90, 19
+    y, step = 80, 19
     for i, (k, v) in enumerate(LINES):
         if k is None:
             y += step // 2

@@ -11,9 +11,4 @@
 
 <img src="./contrib-heatmap.svg" width="860" alt="Contribution heatmap for the last year">
 
-<br>
-<br>
-
-<sub>Art regenerates daily via GitHub Actions · the portrait re-renders whenever my avatar changes</sub>
-
 </div>

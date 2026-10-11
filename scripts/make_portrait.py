@@ -22,9 +22,9 @@ OUT = ROOT / "ascii-portrait.svg"
 RAMP = " .`:-=+*cs#%@"
 COLS, ROWS = 100, 53
 W, H = 370, 400
-PAD_X, PAD_TOP = 0, 30
+PAD_X, PAD_TOP = 0, 16
 CW = W / COLS
-LH = (H - PAD_TOP - 12) / ROWS
+LH = (H - 2 * PAD_TOP) / ROWS
 STATIC = os.environ.get("STATIC") == "1"
 
 
@@ -111,7 +111,6 @@ def svg(rows):
         out.append("</rect></clipPath>")
     out.append("</defs>")
     out.append(f'<rect width="{W}" height="{H}" rx="12" fill="#0d1117" stroke="#30363d"/>')
-    out.append(f'<text x="16" y="20" fill="#7ee787" font-size="12">$ <tspan fill="#c9d1d9">cat avatar.png | ascii</tspan></text>')
     fs = LH * 1.05
     for i, row in enumerate(rows):
         if all(ch == " " for ch, _ in row):

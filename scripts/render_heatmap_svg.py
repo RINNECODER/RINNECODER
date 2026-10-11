@@ -10,7 +10,7 @@ STATIC = os.environ.get("STATIC") == "1"
 
 W = 860
 CELL, GAP = 12, 3
-LEFT, TOP = 46, 56
+LEFT, TOP = 46, 40
 
 
 def level(day, top):
@@ -37,7 +37,6 @@ def main():
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
         f'font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">',
         f'<rect width="{W}" height="{H}" rx="12" fill="#0d1117" stroke="#30363d"/>',
-        f'<text x="24" y="32" fill="#7ee787" font-size="14">$ <tspan fill="#c9d1d9">git log --since="1 year ago" | heatmap</tspan></text>',
     ]
     # Month labels.
     seen = set()
