@@ -20,7 +20,6 @@ LINES = [
     ("", "on-device Android automation assistant"),
     (None, None),
     ("OSS", "AnyPS5 — PS5 executable porting"),
-    ("", "AgentAppFlow — Mac AI dev control center"),
     ("", "jev-behavior-study — agent eval study"),
     (None, None),
     ("Stack", "Swift · SwiftUI · Metal · Kotlin"),
