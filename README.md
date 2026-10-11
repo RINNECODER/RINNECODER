@@ -1,7 +1,5 @@
 <div align="center">
 
-<h3>~/rinnecoder $ whoami</h3>
-
 <table>
   <tr>
     <td valign="top"><img src="./ascii-portrait.svg" width="370" alt="ASCII portrait of my GitHub avatar"></td>
@@ -10,8 +8,6 @@
 </table>
 
 <br>
-
-<h3>~/rinnecoder $ git log --since="1 year ago"</h3>
 
 <img src="./contrib-heatmap.svg" width="860" alt="Contribution heatmap for the last year">
 
