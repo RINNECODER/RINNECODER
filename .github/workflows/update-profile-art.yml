@@ -1,0 +1,44 @@
+name: Update profile art
+
+on:
+  schedule:
+    - cron: "17 6 * * *"   # ~01:17 CT daily
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-art
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt
+
+      - name: Check whether the avatar changed
+        id: avatar
+        run: python scripts/make_portrait.py --check >> "$GITHUB_OUTPUT"
+
+      - name: Re-render ASCII portrait
+        if: steps.avatar.outputs.changed == 'true'
+        run: |
+          pip install -r scripts/requirements-portrait.txt
+          python scripts/make_portrait.py
+
+      - run: python scripts/fetch_contributions.py
+      - run: python scripts/render_heatmap_svg.py
+      - run: python scripts/make_info_card.py
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh profile art [skip ci]"
+          file_pattern: "data/*.json data/avatar.sha256 *.svg"
