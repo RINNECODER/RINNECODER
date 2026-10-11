@@ -3,7 +3,12 @@ name: Update profile art
 on:
   schedule:
     - cron: "17 6 * * *"   # ~01:17 CT daily
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      force_portrait:
+        description: Re-render the portrait even if the avatar is unchanged
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -26,13 +31,15 @@ jobs:
 
       - name: Check whether the avatar changed
         id: avatar
+        env:
+          FORCE: ${{ inputs.force_portrait && '1' || '' }}
         run: python scripts/make_portrait.py --check >> "$GITHUB_OUTPUT"
 
       - name: Re-render ASCII portrait
         if: steps.avatar.outputs.changed == 'true'
         run: |
           pip install -r scripts/requirements-portrait.txt
-          python scripts/make_portrait.py
+          FORCE=1 python scripts/make_portrait.py
 
       - run: python scripts/fetch_contributions.py
       - run: python scripts/render_heatmap_svg.py
