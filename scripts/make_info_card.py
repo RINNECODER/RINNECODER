@@ -11,7 +11,7 @@ KEY, VAL, DIM, ACCENT = "#79c0ff", "#c9d1d9", "#8b949e", "#7ee787"
 
 # (key, value) rows; key=None draws a blank spacer, key="" a continuation line.
 LINES = [
-    ("Name", "Luis R"),
+    ("Name", "0xRinne"),
     ("Role", "Indie dev · apps, AI tools, systems"),
     (None, None),
     ("Now", "LegalPocket AI"),
