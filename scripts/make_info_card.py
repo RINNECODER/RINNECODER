@@ -14,7 +14,7 @@ LINES = [
     ("Name", "0xRinne"),
     ("Role", "Indie dev · apps, AI tools, systems"),
     (None, None),
-    ("Now", "LegalPocket AI"),
+    ("Now", "LegalPocketAI"),
     ("", "legal-document AI for iPhone"),
     (None, None),
     ("OSS", "AnyPS5 — PS5 executable porting"),
